@@ -1,0 +1,385 @@
+/* ===== CSS Variables ===== */
+:root {
+  --primary: #1a365d;
+  --secondary: #2b6cb0;
+  --accent: #ed8936;
+  --bg: #f7fafc;
+  --text: #2d3748;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --muted: #718096;
+  --font-main: "Roboto", system-ui, sans-serif;
+  --font-head: "Montserrat", system-ui, sans-serif;
+  --radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Base / Element selectors ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-weight: 400;
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4 {
+  font-family: var(--font-head);
+  color: var(--primary);
+  margin-bottom: 0.6em;
+}
+
+h1 { font-size: 2.1rem; }
+h2 {
+  font-size: 1.5rem;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.3em;
+  margin-top: 1.5rem;
+}
+h3 { font-size: 1.2rem; color: var(--secondary); }
+
+p { margin-bottom: 1em; }
+
+/* ===== Layout ===== */
+.container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.9rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.3px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 5px;
+  transition: background 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+  background: var(--secondary);
+}
+
+/* ===== ID photo (mailto) ===== */
+.id-photo {
+  width: 68px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.id-photo:hover {
+  transform: scale(1.06);
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1.2rem;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.hero h1 { color: #fff; margin-bottom: 0.5rem; }
+.hero p {
+  max-width: 620px;
+  margin: 0 auto 1.6rem;
+  opacity: 0.95;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  background: #dd6b20;
+  transform: translateY(-2px);
+}
+
+/* ===== Grids ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.home-grid {
+  margin-top: 2rem;
+}
+
+.storyboard-img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.caption-muted {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+.small-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.reference-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.centered-note {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.lab-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.back-to-top {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.compact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.compact-list li {
+  margin-bottom: 0.8rem;
+}
+
+/* ===== Resume specific ===== */
+.resume-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border);
+}
+
+.resume-header h1 {
+  margin-bottom: 0.3rem;
+  font-size: 1.9rem;
+}
+
+.contact-line {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.contact-line a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.contact-line a:hover {
+  text-decoration: underline;
+}
+
+.job {
+  margin-bottom: 1.4rem;
+}
+
+.job-title {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+.job-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.job ul {
+  margin-left: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.job li {
+  margin-bottom: 0.25rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.skill-tag {
+  background: #ebf8ff;
+  color: var(--secondary);
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ===== Lists & special ===== */
+ul.clean {
+  list-style: none;
+}
+
+ul.clean li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.quote {
+  font-style: italic;
+  border-left: 4px solid var(--accent);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #4a5568;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: var(--primary);
+  color: #fff;
+  text-align: center;
+  padding: 1.4rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #bee3f8;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Attribute selector ===== */
+a[href^="mailto"] {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .id-photo {
+    width: 55px;
+    height: 72px;
+  }
+
+  .resume-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 950px) {
+  .storyboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Extra selectors for requirement (≥6 types) ===== */
+/* 1. Element: body, h1, p */
+/* 2. Class: .card, .hero, .btn */
+/* 3. Descendant: nav ul li a */
+/* 4. Pseudo-class: nav a:hover, .id-photo:hover */
+/* 5. Attribute: a[href^="mailto"] */
+/* 6. Class with combination: .contact-line a */
